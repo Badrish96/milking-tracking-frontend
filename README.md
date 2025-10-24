@@ -1,32 +1,25 @@
-# Animal Milking Tracking System
+# Animal Milking Tracking System (Frontend)
 
-A full-stack application for tracking and managing animal milking sessions with real-time monitoring and historical data analysis.
+A Next.js application for tracking and managing animal milking sessions with real-time monitoring and historical data analysis.
 
 ## 🚀 Features
 
-- Real-time milking session tracking
-- Session duration monitoring
+- Real-time milking session tracking with timer
+- Pause/Resume functionality
 - Milk quantity recording
-- Historical data visualization
-- Pagination for session history
-- Background music during milking sessions
-- Offline support with IndexedDB
+- Session history with pagination
+- Calming background music during milking
+- Offline support using IndexedDB
+- Responsive design for all devices
 
 ## 🛠️ Tech Stack
 
-### Frontend
 - Next.js 13+ (App Router)
 - TypeScript
 - Zustand for state management
 - Tailwind CSS for styling
-- Axios for API calls
+- Axios for API communication
 - IndexedDB for offline storage
-
-### Backend
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
 
 ## 📦 Installation
 
@@ -37,66 +30,75 @@ cd milking-tracking
 ```
 
 2. Install dependencies:
-
-For Frontend:
 ```bash
-cd milking-tracking
 npm install
 ```
 
-For Backend:
-```bash
-cd server
-npm install
-```
-
-3. Environment Setup:
-
-Create `.env` files in both frontend and backend directories:
-
-Frontend `.env.local`:
+3. Create a `.env.local` file in the root directory:
 ```
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
 
-Backend `.env`:
-```
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-```
+## 🚀 Development
 
-## 🚀 Running the Application
-
-1. Start the backend server:
+Run the development server:
 ```bash
-cd server
-npm start
-```
-
-2. Start the frontend development server:
-```bash
-cd milking-tracking
 npm run dev
 ```
 
-- Frontend: [http://localhost:3000](http://localhost:3000)
-- Backend: [http://localhost:5000](http://localhost:5000)
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📱 API Endpoints
+## 📁 Project Structure
 
-### Sessions
+```
+milking-tracking/
+├── app/
+│   ├── (pages)/
+│   │   ├── history/
+│   │   └── milking/
+│   ├── components/
+│   ├── services/
+│   ├── store/
+│   └── types/
+├── public/
+│   └── music/
+├── styles/
+└── package.json
+```
 
-- `GET /api/sessions` - Get all milking sessions (with pagination)
-- `POST /api/sessions` - Create a new milking session
+## 🔧 Available Scripts
 
-## 🤝 Contributing
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## 💻 Usage
 
-## 📝 License
+1. **Start Milking Session**
+   - Click "Start Milking" to begin a new session
+   - Timer starts automatically
+   - Background music plays (if enabled)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+2. **During Session**
+   - Pause/Resume as needed
+   - Monitor elapsed time
+   - Stop session when complete
+
+3. **End Session**
+   - Enter milk quantity collected
+   - Save session data
+   - View in history
+
+4. **View History**
+   - Access past sessions
+   - Navigate through pages
+   - View session details
+
+## 🔗 API Integration
+
+The frontend communicates with the backend through these endpoints:
+
+- `GET /api/sessions` - Fetch milking sessions (paginated)
+- `POST /api/sessions` - Create new milking session
