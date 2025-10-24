@@ -1,40 +1,102 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Animal Milking Tracking System
 
-## Getting Started
+A full-stack application for tracking and managing animal milking sessions with real-time monitoring and historical data analysis.
 
-First, run the development server:
+## 🚀 Features
 
+- Real-time milking session tracking
+- Session duration monitoring
+- Milk quantity recording
+- Historical data visualization
+- Pagination for session history
+- Background music during milking sessions
+- Offline support with IndexedDB
+
+## 🛠️ Tech Stack
+
+### Frontend
+- Next.js 13+ (App Router)
+- TypeScript
+- Zustand for state management
+- Tailwind CSS for styling
+- Axios for API calls
+- IndexedDB for offline storage
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Badrish96/milking-tracking.git
+cd milking-tracking
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For Frontend:
+```bash
+cd milking-tracking
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+For Backend:
+```bash
+cd server
+npm install
+```
 
-## Learn More
+3. Environment Setup:
 
-To learn more about Next.js, take a look at the following resources:
+Create `.env` files in both frontend and backend directories:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Frontend `.env.local`:
+```
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Backend `.env`:
+```
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+```
 
-## Deploy on Vercel
+## 🚀 Running the Application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Start the backend server:
+```bash
+cd server
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# milking-tracking-frontend
->>>>>>> bfd9213222e39945e75087fbe8c0e8f7c1747493
+2. Start the frontend development server:
+```bash
+cd milking-tracking
+npm run dev
+```
+
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend: [http://localhost:5000](http://localhost:5000)
+
+## 📱 API Endpoints
+
+### Sessions
+
+- `GET /api/sessions` - Get all milking sessions (with pagination)
+- `POST /api/sessions` - Create a new milking session
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
