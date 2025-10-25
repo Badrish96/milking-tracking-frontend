@@ -7,7 +7,7 @@ export default function HistoryPage() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm p-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex items-center justify-between flex-wrap">
           <Link
             href="/"
             className="text-gray-600 hover:text-gray-800 font-medium flex items-center"

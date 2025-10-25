@@ -260,7 +260,7 @@ export default function MilkingPage() {
         <div className="max-w-md w-full space-y-8">
           {/* Timer Display */}
           <div className="bg-white rounded-3xl shadow-2xl p-12 text-center">
-            <div className="text-6xl md:text-7xl font-bold text-gray-800 font-mono mb-4">
+            <div className="text-5xl flex item-center justify-center md:text-7xl font-bold text-gray-800 font-mono mb-4">
               {formatTime(seconds)}
             </div>
             <div className="text-sm text-gray-500">

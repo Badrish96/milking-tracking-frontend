@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-md w-full space-y-8 text-center">
         {/* Header */}
         <div className="space-y-2">
-          <h1 className="text-4xl font-bold text-gray-800 flex items-center justify-center">
+          <h1 className="text-4xl font-bold text-gray-800 flex items-center justify-center flex-wrap">
             <FontAwesomeIcon icon={faCow} className="mr-2 w-12 h-12" /> Milking Tracker
           </h1>
           <p className="text-gray-600">
