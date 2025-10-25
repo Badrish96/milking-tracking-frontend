@@ -2,8 +2,6 @@ import { create } from "zustand";
 import { milkingApi } from "../services/api";
 import { MilkingSession, CreateMilkingSessionDTO } from "../types/milking";
 
-// API returns sessions in snake_case. Define a local type for that shape.
-
 interface MilkingState {
   sessions: MilkingSession[];
   isLoading: boolean;
@@ -28,12 +26,10 @@ export const useMilkingStore = create<MilkingState>((set, get) => ({
     try {
       set({ isLoading: true, error: null });
 
-      // Fetch from API (returns { sessions, total, currentPage, totalPages })
       const data = await milkingApi.getSessions(page);
 
       const sessionsData = data.sessions || [];
 
-      // Transform API snake_case into frontend camelCase MilkingSession
       const transformedSessions: MilkingSession[] = sessionsData.map((session: any) => ({
         id: session.id,
         startTime: session.start_time,

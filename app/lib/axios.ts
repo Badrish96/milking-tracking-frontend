@@ -10,7 +10,6 @@ const api = axios.create({
 // Request interceptor
 api.interceptors.request.use(
   (config) => {
-    // You can add auth tokens or other headers here
     return config;
   },
   (error) => {
